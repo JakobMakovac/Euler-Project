@@ -22,7 +22,7 @@ public class EP4 {
 
         for (int i = 0; i < numLength; i++){
             if(numString.charAt(i) != numString.charAt(numLength-i-1)){
-                
+
                 return false;
             }
         }

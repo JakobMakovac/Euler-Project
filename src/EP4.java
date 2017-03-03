@@ -3,7 +3,17 @@
  */
 public class EP4 {
     public static void main(String[] args) {
-        isPalindrome(303031);
+        int largestPalindrome = 0;
+
+        for (int i = 1; i < 1000; i++){
+            for (int j = 1; j < 1000; j++){
+                if(isPalindrome(i*j) && i*j > largestPalindrome){
+                    largestPalindrome = i*j;
+                }
+            }
+        }
+
+        System.out.println("Largest palindrome when multiplying two 3-digit numbers is: " + largestPalindrome);
     }
 
     private static boolean isPalindrome (int x){
@@ -12,11 +22,11 @@ public class EP4 {
 
         for (int i = 0; i < numLength; i++){
             if(numString.charAt(i) != numString.charAt(numLength-i-1)){
-                System.out.println("Number is not a palindrome.");
+                
                 return false;
             }
         }
-        System.out.println("Number is a palindrome.");
+
         return true;
     }
 }

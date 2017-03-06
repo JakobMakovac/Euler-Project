@@ -3,21 +3,23 @@
  */
 public class EP5 {
     public static void main(String[] args) throws Exception {
-       
+        long result = lcm(1,lcm(2, lcm(3, lcm(4, lcm(5, lcm(6, lcm(7, lcm(8, lcm(9,
+                lcm(10, lcm(11, lcm(12, lcm( 13, lcm(14, lcm(15, lcm(16, lcm(17, lcm( 18, lcm(19, 20)))))))))))))))))));
+        System.out.println(result);
     }
 
-    private static int lcm (int a, int b) throws Exception {
+    private static long lcm (long a, long b) throws Exception {
         return a*b/gcd(a,b);
     }
 
-    private static int gcd (int x1, int x2) throws Exception {
+    private static long gcd (long x1, long x2) throws Exception {
         Exception e = new Exception("gcd of 0");
         if(x1<1 || x2 <1) {
             throw e;
         }
-        int a = x1;
-        int b = x2;
-        int c;
+        long a = x1;
+        long b = x2;
+        long c;
 
         do {
             c = a % b;
